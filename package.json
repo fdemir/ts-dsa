@@ -1,0 +1,11 @@
+{
+  "name": "ts-ds",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:fdemir/ts-ds.git",
+  "author": "fdemir <frndemir@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+}
