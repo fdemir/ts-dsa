@@ -21,6 +21,7 @@
 interface ILinkedList<T> {
   add(data: T): ListNode<T>;
   deleteNode(node: ListNode<T>): void;
+  search(comparator: (data: T) => boolean): ListNode<T> | null;
   display(): void;
 }
 
@@ -49,6 +50,18 @@ class LinkedList<T> implements ILinkedList<T> {
     this.length++;
 
     return node;
+  }
+
+  search(comparator: (data: T) => boolean): ListNode<T> | null {
+    const checkNext = (node: ListNode<T>): ListNode<T> | null => {
+      if (comparator(node.value)) {
+        return node;
+      }
+
+      return node.next ? checkNext(node.next) : null;
+    };
+
+    return this.head ? checkNext(this.head) : null;
   }
 
   deleteNode(node: ListNode<T>): void {
