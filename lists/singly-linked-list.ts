@@ -22,6 +22,7 @@ interface ILinkedList<T> {
   add(data: T): ListNode<T>;
   delete(node: ListNode<T>): void;
   search(comparator: (data: T) => boolean): ListNode<T> | null;
+  traverse(): T[];
   display(): void;
 }
 
@@ -32,7 +33,6 @@ class ListNode<T> {
 
 class LinkedList<T> implements ILinkedList<T> {
   private head: ListNode<T> | null = null;
-  private tail: ListNode<T> | null = null;
   private length: number = 0;
 
   add(data: T): ListNode<T> {
@@ -40,11 +40,9 @@ class LinkedList<T> implements ILinkedList<T> {
 
     if (!this.length) {
       this.head = node;
-      this.tail = node;
     } else {
       // @ts-ignore
-      this.tail.next = node;
-      this.tail = node;
+      this.head.next = node;
     }
 
     this.length++;
@@ -75,4 +73,22 @@ class LinkedList<T> implements ILinkedList<T> {
       list = list.next;
     }
   }
+
+  public traverse(): T[] {
+    const array: T[] = [];
+    if (!this.head) {
+      return array;
+    }
+
+    const addToArray = (node: ListNode<T>): T[] => {
+      array.push(node.value);
+      return node.next ? addToArray(node.next) : array;
+    };
+    return addToArray(this.head);
+  }
 }
+
+const example = new LinkedList();
+
+example.add(20);
+example.add(230);
