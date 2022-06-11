@@ -19,23 +19,23 @@
 // - Singly Linked List -
 
 interface ILinkedList<T> {
-  add(data: T): MyNode<T>;
-  deleteNode(node: MyNode<T>): void;
+  add(data: T): ListNode<T>;
+  deleteNode(node: ListNode<T>): void;
   display(): void;
 }
 
-class MyNode<T> {
-  public next: MyNode<T> | null = null;
+class ListNode<T> {
+  public next: ListNode<T> | null = null;
   constructor(public value: T) {}
 }
 
 class LinkedList<T> implements ILinkedList<T> {
-  private head: MyNode<T> | null = null;
-  private tail: MyNode<T> | null = null;
+  private head: ListNode<T> | null = null;
+  private tail: ListNode<T> | null = null;
   private length: number = 0;
 
-  add(data: T): MyNode<T> {
-    const node = new MyNode(data);
+  add(data: T): ListNode<T> {
+    const node = new ListNode(data);
 
     if (!this.length) {
       this.head = node;
@@ -51,7 +51,7 @@ class LinkedList<T> implements ILinkedList<T> {
     return node;
   }
 
-  deleteNode(node: MyNode<T>): void {
+  deleteNode(node: ListNode<T>): void {
     // NEEDS TO BE IMPLEMENTED
   }
 
