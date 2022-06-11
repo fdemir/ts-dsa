@@ -1,3 +1,4 @@
+// @ts-nocheck
 interface ILinkedList<T> {
   add(data: T): ListNode<T>;
   delete(node: ListNode<T>): void;
