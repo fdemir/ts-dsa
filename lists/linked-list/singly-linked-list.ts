@@ -67,8 +67,3 @@ class LinkedList<T> implements ILinkedList<T> {
     return addToArray(this.head);
   }
 }
-
-const example = new LinkedList();
-
-example.add(20);
-example.add(230);
