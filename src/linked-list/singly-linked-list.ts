@@ -1,20 +1,19 @@
-// @ts-nocheck
-interface ILinkedList<T> {
-  add(data: T): ListNode<T>;
-  delete(node: ListNode<T>): void;
-  search(comparator: (data: T) => boolean): ListNode<T> | null;
-  traverse(): T[];
-  display(): void;
-}
-
 class ListNode<T> {
   public next: ListNode<T> | null = null;
   constructor(public value: T) {}
 }
 
-class LinkedList<T> implements ILinkedList<T> {
+export class LinkedList<T> {
   private head: ListNode<T> | null = null;
   private length: number = 0;
+
+  get isEmpty() {
+    return this.length === 0;
+  }
+
+  get size() {
+    return this.length;
+  }
 
   add(data: T): ListNode<T> {
     const node = new ListNode(data);
@@ -43,8 +42,24 @@ class LinkedList<T> implements ILinkedList<T> {
     return this.head ? checkNext(this.head) : null;
   }
 
-  delete(node: ListNode<T>): void {
-    // NEEDS TO BE IMPLEMENTED
+  delete(data): void {
+    let current = this.head;
+
+    if (!this.length) {
+      return;
+    }
+
+    if (current?.value == data) {
+      this.head = current?.next || null;
+    } else if (current?.next) {
+      while (current?.next && current?.next?.value != data) {
+        current = current?.next;
+      }
+
+      if (current.next) {
+        current.next = current?.next?.next;
+      }
+    }
   }
 
   display(): void {
