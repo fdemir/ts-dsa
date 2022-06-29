@@ -6,13 +6,7 @@ class ListNode<T> {
   constructor(public value: T) {}
 }
 
-interface ILinkedList<T> {
-  add(value: T): void;
-  delete(node: ListNode<T>): void;
-  reverseTraverse(): T[];
-}
-
-class LinkedList<T> implements ILinkedList<T> {
+class LinkedList<T> {
   private head: ListNode<T> | null = null;
   private tail: ListNode<T> | null = null;
 
