@@ -12,6 +12,22 @@ The number of edges _**(E)**_ of a tree is equal to the number of nodes _**(N)**
 
 ![](https://isaaccomputerscience.org/api/v2.22.5/api/images/content/computer_science/data_structures_and_algorithms/data_structures/figures/isaac_cs_dsa_data_struct_tree_structure.png)
 
-## Rooted Trees
+## Rooted trees
 
 A rooted tree is a tree with one node that has been designated as the root. Unlike real trees, when representing rooted trees in a diagram, the root is commonly situated above the other nodes and the branches descend to the leaf nodes.
+
+![](https://isaaccomputerscience.org/api/v2.22.5/api/images/content/computer_science/data_structures_and_algorithms/data_structures/figures/isaac_cs_dsa_data_struct_rooted_tree.png)
+
+In a rooted tree, the nodes are connected by parent–child relationships. If you mark a path from the root towards a node, a **parent** node is a node that comes directly before another adjacent node, which is considered its child. A node can have any number of children. A **leaf** is a node with no children. In the diagram above, the node marked _12_ is the parent of the nodes marked _2_ and _11_. The node marked _5_ is a leaf node.
+
+It follows that the root is the only node with no parent, and all other nodes are descendants of the root.
+
+## Binary trees
+
+A **binary tree** is a rooted tree where every node has at most two child nodes, which are referred to as the left child and the right child.  
+![](https://isaaccomputerscience.org/api/v2.22.5/api/images/content/computer_science/data_structures_and_algorithms/data_structures/figures/isaac_cs_dsa_data_struct_annotated_binary_tree.png)
+
+### Notes and References
+
+- [Radix Tree](https://en.wikipedia.org/wiki/Radix_tree)
+- [Binary Search Tree](https://en.wikipedia.org/wiki/Binary_search_tree)
