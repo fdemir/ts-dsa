@@ -27,6 +27,10 @@ It follows that the root is the only node with no parent, and all other nodes ar
 A **binary tree** is a rooted tree where every node has at most two child nodes, which are referred to as the left child and the right child.  
 ![](https://isaaccomputerscience.org/api/v2.22.5/api/images/content/computer_science/data_structures_and_algorithms/data_structures/figures/isaac_cs_dsa_data_struct_annotated_binary_tree.png)
 
+## What is difference between graphs and trees?
+
+A graph is a set of vertices/nodes and edges. A tree is a set of nodes and edges. In the graph, there is no unique node which is known as root. In a tree, there is a unique node which is known as root.
+
 ### Notes and References
 
 - [Radix Tree](https://en.wikipedia.org/wiki/Radix_tree)
