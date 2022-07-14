@@ -23,11 +23,10 @@ describe("Singly Linked List", () => {
     linkedList.add(20);
     linkedList.delete(20);
     expect(linkedList.traverse()).toEqual([10]);
-    console.log(linkedList.traverse());
   });
 
   it("traversal", () => {
-    const numbers = [1, 2];
+    const numbers = [1, 2, 3, 4];
     numbers.forEach((value) => linkedList.add(value));
 
     expect(linkedList.traverse()).toEqual(numbers);

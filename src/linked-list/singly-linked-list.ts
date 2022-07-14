@@ -15,14 +15,19 @@ export class LinkedList<T> {
     return this.length;
   }
 
+  // push back
   add(data: T): ListNode<T> {
     const node = new ListNode(data);
 
     if (!this.length) {
       this.head = node;
     } else {
+      let current = this.head;
+      while (current?.next) {
+        current = current.next;
+      }
       // @ts-ignore
-      this.head.next = node;
+      current?.next = node;
     }
 
     this.length++;
