@@ -33,17 +33,9 @@ class BinarySearchTree {
 
       return newNode;
     }
-
-    // for (const currentNode of this.preOrderTraversal()) {
-    //   const canInsertLeft = currentNode?.left == null;
-    //   const canInsertRight = currentNode?.right == null;
-
-    // }
-
     let currentNode = this.root;
     let traversing = true;
 
-    // TODO: traverse by using yield function
     while (traversing) {
       if (currentNode.value == newNode.value) {
         throw new Error("Duplicate found.");
@@ -67,6 +59,20 @@ class BinarySearchTree {
     }
   }
 
+  search(value: number) {
+    let currentNode = this.root;
+    while (currentNode) {
+      if (currentNode.value == value) {
+        return currentNode;
+      } else if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if (value > currentNode.value) {
+        currentNode = currentNode.right;
+      }
+    }
+    return null;
+  }
+
   remove(value: number) {
     for (let node of this.preOrderTraversal()) {
       if (!node) {
@@ -85,13 +91,22 @@ class BinarySearchTree {
     }
   }
 
-  // BFS
+  // Depth-first search(DFS) Algorithm
+
+  /**
+   * traverses from the root to the left subtree then to the right subtree.
+   *
+   * NLR
+   */
   *preOrderTraversal(node = this.root): Generator<BinarySearchTreeNode | null> {
     yield node;
     if (node?.left) yield* this.preOrderTraversal(node.left);
     if (node?.right) yield* this.preOrderTraversal(node.right);
   }
 
+  /**
+   * LRN
+   */
   *postOrderTraversal(
     node = this.root
   ): Generator<BinarySearchTreeNode | null> {
@@ -100,6 +115,9 @@ class BinarySearchTree {
     yield node;
   }
 
+  /**
+   * LNR
+   */
   *inOrderTraversal(node = this.root): Generator<BinarySearchTreeNode | null> {
     if (node?.left) yield* this.inOrderTraversal(node.left);
     yield node;
@@ -107,37 +125,4 @@ class BinarySearchTree {
   }
 }
 
-const myTree = new BinarySearchTree();
-myTree.insert(20);
-myTree.insert(30);
-myTree.insert(40);
-myTree.insert(900);
-myTree.insert(35);
-
-myTree.insert(2);
-myTree.insert(3);
-myTree.insert(4);
-myTree.insert(5);
-myTree.insert(6);
-
-console.log("--- preOrder > ");
-
-for (const iterator of myTree.preOrderTraversal()) {
-  console.log(iterator?.value);
-}
-
-console.log("--- inOrder");
-
-for (const iterator of myTree.inOrderTraversal()) {
-  console.log(iterator?.value);
-}
-
-console.log("--- postOrder");
-
-for (const iterator of myTree.postOrderTraversal()) {
-  console.log(iterator?.value);
-}
-
-console.log("--- tree");
-
-console.log(myTree);
+export { BinarySearchTree };
