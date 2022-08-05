@@ -31,6 +31,14 @@ A **binary tree** is a rooted tree where every node has at most two child nodes,
 
 A graph is a set of vertices/nodes and edges. A tree is a set of nodes and edges. In the graph, there is no unique node which is known as root. In a tree, there is a unique node which is known as root.
 
+## Uses for trees?
+
+There are many types of tree, and each has its own purpose. Here are three common examples:
+
+- Binary trees are used in compilers to build syntax trees, and are used within routers to store routing tables
+- Binary search trees can be built to speed up searching
+- Expression trees can be used to represent algebraic and Boolean expressions in a way that simplifies the processing of the expression
+
 ### Notes and References
 
 - [Radix Tree](https://en.wikipedia.org/wiki/Radix_tree)
