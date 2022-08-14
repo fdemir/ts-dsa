@@ -1,7 +1,5 @@
 ## TS-DS
 
-## Abstract
-
 This repository contains a set of implementations of data structures with TypeScript. The list of data structures could be found in below list.
 
 ## List of Data Structures
@@ -9,6 +7,8 @@ This repository contains a set of implementations of data structures with TypeSc
 - Linked Lists
 - Queue
 - Stack
+- Trees
+- Tuple
 
 ## Resources
 
