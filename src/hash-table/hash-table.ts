@@ -4,6 +4,10 @@ class HashTable<T> {
   table: [string, T][][] = Array(3);
   numItems = 0;
 
+  get length() {
+    return this.numItems;
+  }
+
   // TODO: move it to the seperate place and implement a better hash function, prevent collision
   private hash(key: string, tableLength: number): number {
     // ???
@@ -62,13 +66,18 @@ class HashTable<T> {
       return undefined;
     }
 
-    // TODO: iterate through the array and return the value if found, more performant
     return this.table[id].find(([k]) => k === key)?.[1];
   }
 
-  removeItem() {
-    // TODO: implement
-    throw new Error("Not implemented");
+  removeItem(key: string) {
+    const id = this.hash(key, this.table.length);
+
+    if (!this.table[id]) {
+      return;
+    }
+
+    this.table[id] = this.table[id].filter(([k]) => k !== key);
+    this.numItems--;
   }
 }
 
