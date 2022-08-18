@@ -43,3 +43,4 @@ There are many types of tree, and each has its own purpose. Here are three commo
 
 - [Radix Tree](https://en.wikipedia.org/wiki/Radix_tree)
 - [Binary Search Tree](https://en.wikipedia.org/wiki/Binary_search_tree)
+- [Tree Traversals](https://isaaccomputerscience.org/concepts/dsa_datastruct_tree_traversals?examBoard=all&stage=all&topic=data_structures)
