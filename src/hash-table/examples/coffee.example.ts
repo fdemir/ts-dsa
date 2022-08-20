@@ -1,4 +1,4 @@
-import { HashTable } from "./hash-table";
+import { HashTable } from "../hash-table";
 type CoffeeTypes = "Arabica" | "Robusta" | "Excelsa" | "Liberica";
 type Size = "sm" | "lg" | "xl";
 
