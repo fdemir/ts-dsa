@@ -87,4 +87,19 @@ export class LinkedList<T> {
     };
     return addToArray(this.head);
   }
+
+  /**
+   * Mutates the linked list
+   */
+  reverse(): void {
+    const newLinkedList = new LinkedList<T>();
+
+    const values = this.traverse();
+
+    for (let i = 0; i < values.length; i++) {
+      newLinkedList.add(values[values.length - 1 - i]);
+    }
+
+    this.head = newLinkedList.head;
+  }
 }

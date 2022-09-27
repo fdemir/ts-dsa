@@ -33,4 +33,15 @@ describe("Singly Linked List", () => {
     expect(linkedList.size).toBe(numbers.length);
     expect(linkedList.isEmpty).toBe(false);
   });
+
+  it("reverses", () => {
+    const numbers = [2, 4, 6, 8];
+    numbers.forEach((value) => linkedList.add(value));
+
+    linkedList.reverse();
+
+    const reversedLinkedListValues = Array.from(numbers).reverse();
+
+    expect(linkedList.traverse()).toEqual(reversedLinkedListValues);
+  });
 });
