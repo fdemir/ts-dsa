@@ -9,6 +9,7 @@ This repository contains a set of implementations of data structures with TypeSc
 - Stack
 - Trees
 - Tuple
+- Graph
 
 ## Resources
 
