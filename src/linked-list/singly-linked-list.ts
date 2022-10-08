@@ -4,7 +4,7 @@ class ListNode<T> {
 }
 
 export class LinkedList<T> {
-  private head: ListNode<T> | null = null;
+  public head: ListNode<T> | null = null;
   private length: number = 0;
 
   get isEmpty() {
@@ -101,5 +101,43 @@ export class LinkedList<T> {
     }
 
     this.head = newLinkedList.head;
+  }
+
+  printKthToLast(head: ListNode<T> | null, k: number) {
+    if (head == null) {
+      return 0;
+    }
+
+    let index = this.printKthToLast(head.next, k) + 1;
+
+    return index;
+  }
+
+  deleteByNode(node: ListNode<T> | null | undefined): void {
+    if (!node || !node.next) {
+      return;
+    }
+
+    node.value = node.next.value;
+    node.next = node.next.next;
+  }
+
+  removeMiddleNode(): void {
+    if (this.isEmpty) {
+      return;
+    }
+
+    let mid = Math.floor(this.length / 2);
+    let pointer = 0;
+    let current = this.head;
+
+    while (current != null) {
+      if (pointer == mid) {
+        this.deleteByNode(current);
+        return;
+      }
+      current = current.next;
+      pointer++;
+    }
   }
 }

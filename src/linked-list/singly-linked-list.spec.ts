@@ -44,4 +44,33 @@ describe("Singly Linked List", () => {
 
     expect(linkedList.traverse()).toEqual(reversedLinkedListValues);
   });
+
+  it("prints kth to last element", () => {
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    numbers.forEach((value) => linkedList.add(value));
+
+    expect(linkedList.printKthToLast(linkedList.head, 3)).toBe(
+      numbers[numbers.length - 1]
+    );
+  });
+
+  it("deletes the node", () => {
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    numbers.forEach((value) => linkedList.add(value));
+
+    linkedList.deleteByNode(linkedList.head?.next?.next);
+
+    expect(linkedList.traverse()).toEqual([1, 2, 4, 5, 6, 7, 8, 9]);
+  });
+
+  it("removes the mid node", () => {
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    numbers.forEach((value) => linkedList.add(value));
+
+    linkedList.removeMiddleNode();
+
+    console.log(linkedList.traverse());
+
+    expect(linkedList.traverse()).toEqual([1, 2, 3, 4, 6, 7, 8, 9]);
+  });
 });
