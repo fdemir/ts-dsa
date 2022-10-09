@@ -7,7 +7,7 @@
  * postOrderTraversal
  */
 
-class BinarySearchTreeNode {
+export class BinarySearchTreeNode {
   constructor(
     public value: number,
     public left: BinarySearchTreeNode | null = null,
