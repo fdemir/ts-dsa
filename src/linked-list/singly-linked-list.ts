@@ -1,8 +1,4 @@
-class ListNode<T> {
-  public next: ListNode<T> | null = null;
-  constructor(public value: T) {}
-}
-
+import { SinglyListNode as ListNode } from "../util/common";
 export class LinkedList<T> {
   public head: ListNode<T> | null = null;
   private length: number = 0;

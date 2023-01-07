@@ -1,11 +1,6 @@
+import { DoublyListNode as ListNode } from "../util/common";
+
 // This file only contains major differences between singly linked list.
-
-class ListNode<T> {
-  public next: ListNode<T> | null = null;
-  public prev: ListNode<T> | null = null;
-  constructor(public value: T) {}
-}
-
 class LinkedList<T> {
   private head: ListNode<T> | null = null;
   private tail: ListNode<T> | null = null;
