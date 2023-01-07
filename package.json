@@ -6,10 +6,13 @@
   "author": "fdemir <frndemir@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "cmt": "git-cz --disable-emoji"
   },
   "devDependencies": {
     "@types/jest": "^28.1.1",
+    "git-cz": "^4.9.0",
     "jest": "^28.1.1",
     "ts-jest": "^28.0.4",
     "typescript": "^4.7.3"
