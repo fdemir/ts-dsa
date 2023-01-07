@@ -18,6 +18,7 @@ This repository contains a set of implementations of data structures with TypeSc
 - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 - [DSA Data Structures and Algorithms Annotated Reference](https://www.academia.edu/30843807/DSA_Data_Structures_and_Algorithms_Annotated_Reference_with_Examples)
 - [https://www.programiz.com/dsa](https://www.programiz.com/dsa)
+- [https://en.wikipedia.org/wiki/List_of_data_structures](https://en.wikipedia.org/wiki/List_of_data_structures)
 
 ## Contributing
 
