@@ -20,13 +20,6 @@ class Heap {
     this._list.sort(this.comparator);
   }
 
-  pull() {
-    const highestIdx: number = this._list[this._list.length - 1];
-    const item = this._list.splice(highestIdx, 0);
-
-    return item;
-  }
-
   peek() {
     return this._list[0];
   }
@@ -37,6 +30,10 @@ class Heap {
 
   isEmpty() {
     return this._list.length === 0;
+  }
+
+  clear() {
+    this._list = [];
   }
 
   get size() {
