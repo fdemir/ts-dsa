@@ -43,10 +43,36 @@ describe("Heap", () => {
     expect(myHeap.size).toBe(3);
   });
 
+  it("not inserts the empty node", () => {
+    myHeap.insert(null);
+
+    expect(myHeap.isEmpty()).toBe(true);
+  });
+
+  it("size is 3", () => {
+    addExampleNodes(myHeap);
+
+    expect(myHeap.size).toBe(3);
+  });
+
   it("peeks and retrieve the urgent task", () => {
     addExampleNodes(myHeap);
     let urgent = myHeap.peek();
 
     expect(urgent.task).toBe("work");
+  });
+
+  it("pops and retrieve the unimportant task", () => {
+    addExampleNodes(myHeap);
+    let unimportant = myHeap.pop();
+
+    expect(unimportant.task).toBe("clean");
+  });
+
+  it("clears the heap", () => {
+    addExampleNodes(myHeap);
+    myHeap.clear();
+
+    expect(myHeap.isEmpty()).toBe(true);
   });
 });
