@@ -1,9 +1,9 @@
 import { DoublyListNode as ListNode } from "../util/common";
 
 // This file only contains major differences between singly linked list.
-class LinkedList<T> {
-  private head: ListNode<T> | null = null;
-  private tail: ListNode<T> | null = null;
+export class DoublyLinkedList<T> {
+  public head: ListNode<T> | null = null;
+  public tail: ListNode<T> | null = null;
 
   add(value: T): void {
     const n = new ListNode<T>(value);
@@ -21,6 +21,7 @@ class LinkedList<T> {
 
   delete(node: ListNode<T>): void {
     if (node.prev) {
+      // @ts-ignore
       this.head = node.next;
     } else {
       const prevNode = node.prev as unknown as ListNode<T>;
@@ -34,6 +35,7 @@ class LinkedList<T> {
     const arr: T[] = [];
 
     while (current) {
+      // @ts-ignore
       arr.push(current.value);
       current = current.prev;
     }
