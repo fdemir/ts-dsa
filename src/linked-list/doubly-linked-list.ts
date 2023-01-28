@@ -5,7 +5,7 @@ export class DoublyLinkedList<T> {
   public head: ListNode<T> | null = null;
   public tail: ListNode<T> | null = null;
 
-  add(value: T): void {
+  add(value: T): ListNode<T> {
     const n = new ListNode<T>(value);
 
     if (!this.head) {
@@ -17,6 +17,8 @@ export class DoublyLinkedList<T> {
       this.tail.next = n;
       this.tail = n;
     }
+
+    return n;
   }
 
   delete(node: ListNode<T>): void {
@@ -41,5 +43,25 @@ export class DoublyLinkedList<T> {
     }
 
     return arr;
+  }
+
+  moveFront(node: ListNode<T>) {
+    if (node.prev) {
+      const prevNode = node.prev as unknown as ListNode<T>;
+
+      prevNode.next = node.next;
+      node.next = this.head;
+      this.head = node;
+    }
+  }
+
+  removeTail(): void {
+    this.tail = null;
+  }
+
+  unshift(value: T) {
+    let node = new ListNode(value);
+    this.moveFront(node);
+    return node;
   }
 }

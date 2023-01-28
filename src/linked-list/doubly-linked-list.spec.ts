@@ -1,4 +1,3 @@
-import { DoublyListNode } from "../util/common";
 import { DoublyLinkedList } from "./doubly-linked-list";
 
 describe("Doubly Linked List", () => {
@@ -36,5 +35,33 @@ describe("Doubly Linked List", () => {
     list.add(B);
 
     expect(list.reverseTraverse()).toEqual([B, A]);
+  });
+
+  it("move front", () => {
+    let A = 512;
+    let B = 256;
+    let C = 128;
+
+    list.add(A);
+    let targetNode = list.add(B);
+    list.add(C);
+
+    list.moveFront(targetNode);
+
+    expect(list.head?.value).toBe(B);
+  });
+
+  it("remove tail", () => {
+    let A = 512;
+    let B = 256;
+    let C = 128;
+
+    list.add(A);
+    list.add(B);
+    list.add(C);
+
+    list.removeTail();
+
+    expect(list.tail).toBeNull();
   });
 });
