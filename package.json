@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "test:cov": "jest --coverage",
+    "test:cov": "jest --coverage --watch",
     "cmt": "git-cz --disable-emoji"
   },
   "devDependencies": {
