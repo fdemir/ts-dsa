@@ -4,6 +4,8 @@ LRU cache is a data structure that stores a list of items in a way that the most
 
 It uses an Hashmap to store the key-value pairs and a doubly linked list to store the keys in the order of their use.
 
+![](/assets/lru-cache.png)
+
 ### Usage
 
 ```js
