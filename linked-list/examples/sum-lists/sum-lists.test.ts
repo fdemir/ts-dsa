@@ -5,7 +5,6 @@
  * write a function that adds the two numbers and returns the sum as a linked list.
  *
  * Example: (7 -> 1 -> 6) + (5 -> 9 -> 2) = 617 + 295 = 912
- *
  */
 
 // TODO: cover this func

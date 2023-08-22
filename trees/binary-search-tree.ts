@@ -11,7 +11,7 @@ export class BinarySearchTreeNode {
   constructor(
     public value: number,
     public left: BinarySearchTreeNode | null = null,
-    public right: BinarySearchTreeNode | null = null
+    public right: BinarySearchTreeNode | null = null,
   ) {}
 
   get isLeaf() {
@@ -108,7 +108,7 @@ class BinarySearchTree {
    * LRN
    */
   *postOrderTraversal(
-    node = this.root
+    node = this.root,
   ): Generator<BinarySearchTreeNode | null> {
     if (node?.left) yield* this.postOrderTraversal(node.left);
     if (node?.right) yield* this.postOrderTraversal(node.right);

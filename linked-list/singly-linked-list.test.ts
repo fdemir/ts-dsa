@@ -1,4 +1,4 @@
-import { beforeEach, describe, it, assertEquals } from "../deps.ts";
+import { assertEquals, beforeEach, describe, it } from "../deps.ts";
 import { LinkedList } from "./singly-linked-list.ts";
 
 describe("Singly Linked List", () => {
@@ -56,7 +56,7 @@ describe("Singly Linked List", () => {
     // FIXME: ???*
     assertEquals(
       linkedList.printKthToLast(linkedList.head, 1) - 1,
-      numbers[numbers.length - 1]
+      numbers[numbers.length - 1],
     );
   });
 

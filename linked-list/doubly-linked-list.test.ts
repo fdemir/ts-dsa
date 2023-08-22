@@ -1,4 +1,4 @@
-import { beforeEach, describe, it, assertEquals } from "../deps.ts";
+import { assertEquals, beforeEach, describe, it } from "../deps.ts";
 import { DoublyLinkedList } from "./doubly-linked-list.ts";
 
 describe("Doubly Linked List", () => {

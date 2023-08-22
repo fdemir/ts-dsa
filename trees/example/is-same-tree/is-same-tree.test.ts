@@ -1,6 +1,6 @@
 // Given the roots of two binary trees p and q, write a function to check if they are the same or not.
 // Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
-import { describe, it, assertEquals } from "../../../deps.ts";
+import { assertEquals, describe, it } from "../../../deps.ts";
 import { BinarySearchTreeNode as TreeNode } from "../../binary-search-tree.ts";
 import { isSameTree } from "./is-same-tree.ts";
 

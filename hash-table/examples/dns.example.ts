@@ -41,7 +41,7 @@ class ResourceRecord {
 
     if (!record) {
       throw new Error(
-        `There is no record for '${name}'. Please register first.`
+        `There is no record for '${name}'. Please register first.`,
       );
     }
 
