@@ -1,4 +1,4 @@
-import { DoublyListNode as ListNode } from "../util/common";
+import { DoublyListNode as ListNode } from "../util/common.ts";
 
 // This file only contains major differences between singly linked list.
 export class DoublyLinkedList<T> {

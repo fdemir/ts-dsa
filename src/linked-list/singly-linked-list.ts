@@ -1,4 +1,4 @@
-import { SinglyListNode as ListNode } from "../util/common";
+import { SinglyListNode as ListNode } from "../util/common.ts";
 export class LinkedList<T> {
   public head: ListNode<T> | null = null;
   private length: number = 0;
@@ -23,7 +23,7 @@ export class LinkedList<T> {
         current = current.next;
       }
       // @ts-ignore
-      current?.next = node;
+      current.next = node;
     }
 
     this.length++;
@@ -33,7 +33,7 @@ export class LinkedList<T> {
 
   search(comparator: (data: T) => boolean): ListNode<T> | null {
     const checkNext = (node: ListNode<T>): ListNode<T> | null => {
-      if (comparator(node.value)) {
+      if (comparator(node.value as T)) {
         return node;
       }
 
@@ -43,7 +43,7 @@ export class LinkedList<T> {
     return this.head ? checkNext(this.head) : null;
   }
 
-  delete(data): void {
+  delete(data: T): void {
     let current = this.head;
 
     if (!this.length) {
@@ -78,7 +78,7 @@ export class LinkedList<T> {
     }
 
     const addToArray = (node: ListNode<T>): T[] => {
-      array.push(node.value);
+      array.push(node.value as T);
       return node.next ? addToArray(node.next) : array;
     };
     return addToArray(this.head);
@@ -99,12 +99,12 @@ export class LinkedList<T> {
     this.head = newLinkedList.head;
   }
 
-  printKthToLast(head: ListNode<T> | null, k: number) {
+  printKthToLast(head: ListNode<T> | null, k: number): number {
     if (head == null) {
       return 0;
     }
 
-    let index = this.printKthToLast(head.next, k) + 1;
+    const index = this.printKthToLast(head.next, k) + 1;
 
     return index;
   }

@@ -1,4 +1,5 @@
-import { BinarySearchTree } from "./binary-search-tree";
+import { BinarySearchTree } from "./binary-search-tree.ts";
+import { assertEquals, beforeEach, describe, it } from "../deps.ts";
 
 describe("Binary Search Tree", () => {
   let treeOfLife: BinarySearchTree;
@@ -9,7 +10,7 @@ describe("Binary Search Tree", () => {
 
   it("adds a node to the tree", () => {
     treeOfLife.insert(1);
-    expect(treeOfLife.root?.value).toBe(1);
+    assertEquals(treeOfLife.root?.value, 1);
   });
 
   it("traverses the tree in pre-order", () => {
@@ -17,9 +18,9 @@ describe("Binary Search Tree", () => {
     treeOfLife.insert(5);
     treeOfLife.insert(20);
     let traverseFunc = treeOfLife.preOrderTraversal();
-    expect(traverseFunc.next().value.value).toBe(10);
-    expect(traverseFunc.next().value.value).toBe(5);
-    expect(traverseFunc.next().value.value).toBe(20);
+    assertEquals(traverseFunc.next().value.value, 10);
+    assertEquals(traverseFunc.next().value.value, 5);
+    assertEquals(traverseFunc.next().value.value, 20);
   });
 
   it("traverses the tree in post-order", () => {
@@ -27,9 +28,9 @@ describe("Binary Search Tree", () => {
     treeOfLife.insert(5);
     treeOfLife.insert(20);
     let traverseFunc = treeOfLife.postOrderTraversal();
-    expect(traverseFunc.next().value.value).toBe(5);
-    expect(traverseFunc.next().value.value).toBe(20);
-    expect(traverseFunc.next().value.value).toBe(10);
+    assertEquals(traverseFunc.next().value.value, 5);
+    assertEquals(traverseFunc.next().value.value, 20);
+    assertEquals(traverseFunc.next().value.value, 10);
   });
 
   it("traverses the tree in in-order", () => {
@@ -37,9 +38,9 @@ describe("Binary Search Tree", () => {
     treeOfLife.insert(5);
     treeOfLife.insert(20);
     let traverseFunc = treeOfLife.inOrderTraversal();
-    expect(traverseFunc.next().value.value).toBe(5);
-    expect(traverseFunc.next().value.value).toBe(10);
-    expect(traverseFunc.next().value.value).toBe(20);
+    assertEquals(traverseFunc.next().value.value, 5);
+    assertEquals(traverseFunc.next().value.value, 10);
+    assertEquals(traverseFunc.next().value.value, 20);
   });
 
   it("adds multiple nodes to the tree", () => {
@@ -48,9 +49,9 @@ describe("Binary Search Tree", () => {
     treeOfLife.insert(40);
 
     let traverseFunc = treeOfLife.preOrderTraversal();
-    expect(traverseFunc.next().value.value).toBe(30);
-    expect(traverseFunc.next().value.value).toBe(20);
-    expect(traverseFunc.next().value.value).toBe(40);
+    assertEquals(traverseFunc.next().value.value, 30);
+    assertEquals(traverseFunc.next().value.value, 20);
+    assertEquals(traverseFunc.next().value.value, 40);
   });
 
   it("removes a node from the tree", () => {
@@ -59,14 +60,14 @@ describe("Binary Search Tree", () => {
     treeOfLife.insert(40);
     treeOfLife.remove(20);
     let traverseFunc = treeOfLife.preOrderTraversal();
-    expect(traverseFunc.next().value.value).toBe(30);
-    expect(traverseFunc.next().value.value).toBe(40);
+    assertEquals(traverseFunc.next().value.value, 30);
+    assertEquals(traverseFunc.next().value.value, 40);
   });
 
   it("search for a node in the tree", () => {
     treeOfLife.insert(10);
     treeOfLife.insert(3);
     treeOfLife.insert(302);
-    expect(treeOfLife.search(3)?.value).toBe(3);
+    assertEquals(treeOfLife.search(3)?.value, 3);
   });
 });

@@ -1,4 +1,5 @@
-import { LinkedList } from "./singly-linked-list";
+import { assertEquals, beforeEach, describe, it } from "../deps.ts";
+import { LinkedList } from "./singly-linked-list.ts";
 
 describe("Singly Linked List", () => {
   let linkedList: LinkedList<number>;
@@ -14,29 +15,29 @@ describe("Singly Linked List", () => {
   });
 
   it("empty", () => {
-    expect(linkedList.isEmpty).toBe(true);
-    expect(linkedList.size).toBe(0);
+    assertEquals(linkedList.isEmpty, true);
+    assertEquals(linkedList.size, 0);
   });
 
   it("push", () => {
     linkedList.add(10);
-    expect(linkedList.size).toBe(1);
-    expect(linkedList.isEmpty).toBe(false);
+    assertEquals(linkedList.size, 1);
+    assertEquals(linkedList.isEmpty, false);
   });
 
   it("delete", () => {
     linkedList.add(10);
     linkedList.add(20);
     linkedList.delete(20);
-    expect(linkedList.traverse()).toEqual([10]);
+    assertEquals(linkedList.traverse(), [10]);
   });
 
   it("traversal", () => {
     const numbers = generateLinkedList(4);
 
-    expect(linkedList.traverse()).toEqual(numbers);
-    expect(linkedList.size).toBe(numbers.length);
-    expect(linkedList.isEmpty).toBe(false);
+    assertEquals(linkedList.traverse(), numbers);
+    assertEquals(linkedList.size, numbers.length);
+    assertEquals(linkedList.isEmpty, false);
   });
 
   it("reverses", () => {
@@ -46,15 +47,16 @@ describe("Singly Linked List", () => {
 
     const reversedLinkedListValues = Array.from(numbers).reverse();
 
-    expect(linkedList.traverse()).toEqual(reversedLinkedListValues);
+    assertEquals(linkedList.traverse(), reversedLinkedListValues);
   });
 
   it("prints kth to last element", () => {
     const numbers = generateLinkedList(1);
 
     // FIXME: ???*
-    expect(linkedList.printKthToLast(linkedList.head, 1) - 1).toBe(
-      numbers[numbers.length - 1]
+    assertEquals(
+      linkedList.printKthToLast(linkedList.head, 1) - 1,
+      numbers[numbers.length - 1],
     );
   });
 
@@ -67,7 +69,7 @@ describe("Singly Linked List", () => {
 
     numbers.splice(2, 1);
 
-    expect(linkedList.traverse()).toEqual(numbers);
+    assertEquals(linkedList.traverse(), numbers);
   });
 
   it("removes the mid node", () => {
@@ -77,6 +79,6 @@ describe("Singly Linked List", () => {
 
     numbers.splice(1, 1);
 
-    expect(linkedList.traverse()).toEqual(numbers);
+    assertEquals(linkedList.traverse(), numbers);
   });
 });

@@ -2,7 +2,7 @@
  * Cracking the Coding Interview -> 2.6
  */
 
-import { LinkedList } from "../../singly-linked-list";
+import { LinkedList } from "../../singly-linked-list.ts";
 
 function isPalindrome(list: LinkedList<any>) {
   let stack: any[] = [];

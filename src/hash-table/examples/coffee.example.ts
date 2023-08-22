@@ -1,4 +1,5 @@
-import { HashTable } from "../hash-table";
+import { HashTable } from "../hash-table.ts";
+
 type CoffeeTypes = "Arabica" | "Robusta" | "Excelsa" | "Liberica";
 type Size = "sm" | "lg" | "xl";
 

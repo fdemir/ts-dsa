@@ -1,4 +1,5 @@
-import { DoublyLinkedList } from "./doubly-linked-list";
+import { assertEquals, beforeEach, describe, it } from "../deps.ts";
+import { DoublyLinkedList } from "./doubly-linked-list.ts";
 
 describe("Doubly Linked List", () => {
   let list: DoublyLinkedList<number>;
@@ -8,47 +9,47 @@ describe("Doubly Linked List", () => {
   });
 
   it("adds one and gets the head", () => {
-    let nodeValue = 1024;
+    const nodeValue = 1024;
 
     list.add(nodeValue);
 
-    expect(list.head?.value).toBe(nodeValue);
+    assertEquals(list.head?.value, nodeValue);
   });
 
   it("adds nodes and gets the tail", () => {
-    let A = 512;
-    let B = 256;
-    let C = 128;
+    const A = 512;
+    const B = 256;
+    const C = 128;
 
     list.add(A);
     list.add(B);
     list.add(C);
 
-    expect(list.tail?.value).toBe(C);
+    assertEquals(list.tail?.value, C);
   });
 
   it("reverse traverses", () => {
-    let A = 512;
-    let B = 256;
+    const A = 512;
+    const B = 256;
 
     list.add(A);
     list.add(B);
 
-    expect(list.reverseTraverse()).toEqual([B, A]);
+    assertEquals(list.reverseTraverse(), [B, A]);
   });
 
   it("move front", () => {
-    let A = 512;
-    let B = 256;
-    let C = 128;
+    const A = 512;
+    const B = 256;
+    const C = 128;
 
     list.add(A);
-    let targetNode = list.add(B);
+    const targetNode = list.add(B);
     list.add(C);
 
     list.moveFront(targetNode);
 
-    expect(list.head?.value).toBe(B);
+    assertEquals(list.head?.value, B);
   });
 
   it("remove tail", () => {
@@ -62,6 +63,6 @@ describe("Doubly Linked List", () => {
 
     list.removeTail();
 
-    expect(list.tail).toBeNull();
+    assertEquals(list.tail, null);
   });
 });

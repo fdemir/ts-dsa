@@ -1,4 +1,5 @@
-import { HashTable } from "./hash-table";
+import { assertEquals, beforeEach, describe, it } from "../deps.ts";
+import { HashTable } from "./hash-table.ts";
 
 describe("Hash Table", () => {
   let table: HashTable<string>;
@@ -8,7 +9,7 @@ describe("Hash Table", () => {
   });
 
   it("should be empty", () => {
-    expect(table.length).toStrictEqual(0);
+    assertEquals(table.length, 0);
   });
 
   it("adds one item with key", () => {
@@ -17,7 +18,7 @@ describe("Hash Table", () => {
 
     table.setItem(key, subject);
 
-    expect(table.getItem(key)).toEqual(subject);
+    assertEquals(table.getItem(key), subject);
   });
 
   it("adds multiple items ", () => {
@@ -26,12 +27,12 @@ describe("Hash Table", () => {
     table.setItem("surname", "Doe");
     table.setItem("city", "Antalya");
 
-    expect(table.length).toEqual(4);
+    assertEquals(table.length, 4);
   });
 
   it("removes item", () => {
     table.setItem("color", "blue");
     table.removeItem("color");
-    expect(table.getItem("color")).toBeUndefined();
+    assertEquals(table.getItem("color"), undefined);
   });
 });

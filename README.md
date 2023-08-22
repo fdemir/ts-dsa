@@ -1,6 +1,9 @@
 ## TS-DS
 
-This repository contains a set of implementations of data structures with TypeScript. The list of data structures could be found in below list.
+This repository contains a set of implementations of data structures with
+TypeScript. The list of data structures could be found in below list. The data
+structures are implemented by using Deno. So, you need to install Deno to run
+the code.
 
 ## List of Data Structures
 
@@ -22,4 +25,5 @@ This repository contains a set of implementations of data structures with TypeSc
 
 ## Contributing
 
-If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
+If you'd like to contribute, please fork the repository and make changes as
+you'd like. Pull requests are warmly welcome.

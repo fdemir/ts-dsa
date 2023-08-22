@@ -1,5 +1,6 @@
-import { LinkedList } from "../../singly-linked-list";
-import { isPalindrome } from "./is-palindrome";
+import { assertEquals, describe, it } from "../../../deps.ts";
+import { LinkedList } from "../../singly-linked-list.ts";
+import { isPalindrome } from "./is-palindrome.ts";
 
 describe("is palindrome", () => {
   it("should return true for palindrome", () => {
@@ -8,7 +9,7 @@ describe("is palindrome", () => {
     linkedList.add(2);
     linkedList.add(1);
 
-    expect(isPalindrome(linkedList)).toBe(true);
+    assertEquals(isPalindrome(linkedList), true);
   });
 
   it("should return false for non-palindrome", () => {
@@ -19,6 +20,6 @@ describe("is palindrome", () => {
     linkedList.add(4);
     linkedList.add(5);
 
-    expect(isPalindrome(linkedList)).toBe(false);
+    assertEquals(isPalindrome(linkedList), false);
   });
 });

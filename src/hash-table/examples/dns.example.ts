@@ -1,4 +1,4 @@
-import { HashTable } from "../hash-table";
+import { HashTable } from "../hash-table.ts";
 
 class ResourceRecord {
   table: HashTable<string>;
@@ -41,7 +41,7 @@ class ResourceRecord {
 
     if (!record) {
       throw new Error(
-        `There is no record for '${name}'. Please register first.`
+        `There is no record for '${name}'. Please register first.`,
       );
     }
 
