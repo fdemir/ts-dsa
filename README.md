@@ -1,6 +1,6 @@
-## TS-DS
+## TS-DSA
 
-This repository contains a set of implementations of data structures with
+This repository contains a set of implementations of data structures and algorithms with
 TypeScript. The list of data structures could be found in below list. The data
 structures are implemented by using Deno. So, you need to install Deno to run
 the code.
